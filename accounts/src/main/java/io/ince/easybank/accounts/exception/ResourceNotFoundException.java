@@ -8,8 +8,8 @@ public class ResourceNotFoundException extends RuntimeException {
 
     /**
      * @param resourceName - it is accounts or customer
-     * @param fieldName - field name
-     * @param fieldValue - field value
+     * @param fieldName    - field name
+     * @param fieldValue   - field value
      */
     public ResourceNotFoundException(String resourceName, String fieldName, String fieldValue) {
         super(String.format("%s not found with the given input data %s: %s", resourceName, fieldName, fieldValue));
