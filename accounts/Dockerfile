@@ -9,4 +9,6 @@ MAINTAINER tutkuince.io
 COPY target/accounts-0.0.1-SNAPSHOT.jar accounts-0.0.1-SNAPSHOT.jar
 
 # execute the application
-ENTRYPOINT["java", "-jar", "accounts-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "accounts-0.0.1-SNAPSHOT.jar"]
+
+# docker build . -t tutkuince/accounts:s4
