@@ -11,7 +11,7 @@
     <groupId>io.ince.easybank</groupId>
     <artifactId>accounts</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>accounts</name>
     <description>accounts</description>
     <properties>
