@@ -1,0 +1,9 @@
+Running a Spring Boot app as a container using Dockerfile
+1) Run the maven command, "mvn clean install" from the location where pom.xml is present
+to generate a fat jar inside target folder.
+2) Write instructions to Docker inside a file with the name Dockerfile to generate a Docker image.
+Sample instructions are mentioned on the left hand side.
+3) Execute the docker command "docker build . -t tutkuince/accounts:s4" from the location where Dockerfile is present.
+This will generate the docker image based on the tag name provided
+4) Execute the docker command "docker run -p 8080:8080 tutkuince/accounts:s4". This will start the docker container
+based on the docker image name and port mapping provided
