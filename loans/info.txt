@@ -1,0 +1,14 @@
+Running a Spring Boot app as a container using Buildpacks
+
+Steps to be followed
+1) Add the configurations like mentioned on the right hand side inside the pom.xml Make sure to pass the image name details
+    - <image><name>tutkuince/${project.artifactId}:s4</name></image>
+2) Run the maven command "mvn spring-boot:build-image" from the location where pom.xml is present to generate the docker image
+without the need of Dockerfile
+3) Execute the docker command "docker run -p 8090:8090 tutkuince/loans:s4". This will start the docker container based on the docker image name
+and port mapping provided.
+
+Buildpacks
+Cloud Native Buildpacks offer an alternative approach to Dockerfiles, prioritizing consistency, security, performance, and governance.
+With Buildpacks, developers can automatically generate production-ready OCI images from their application source code
+without the need to write a Dockerfile.
