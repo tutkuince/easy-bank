@@ -16,3 +16,6 @@ name and port mapping provided.
 Google Jib offer an alternative approach to Dockerfiles, prioritizing consistency, security, performance, and governance.
 With Jib, developers can automatically generate production ready OCI images from their application source code without the need to
 write a Dockerfile and even local Docker setup.
+
+-- Pushing Docker image to remote repository
+=> docker image push docker.io/tutkuince/cards:s4

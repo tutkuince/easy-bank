@@ -12,3 +12,7 @@ Buildpacks
 Cloud Native Buildpacks offer an alternative approach to Dockerfiles, prioritizing consistency, security, performance, and governance.
 With Buildpacks, developers can automatically generate production-ready OCI images from their application source code
 without the need to write a Dockerfile.
+
+
+-- Pushing Docker image to remote repository
+=> docker image push docker.io/tutkuince/loans:s4

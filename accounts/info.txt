@@ -7,3 +7,7 @@ Sample instructions are mentioned on the left hand side.
 This will generate the docker image based on the tag name provided
 4) Execute the docker command "docker run -p 8080:8080 tutkuince/accounts:s4". This will start the docker container
 based on the docker image name and port mapping provided
+
+
+-- Pushing Docker image to remote repository
+=> docker image push docker.io/tutkuince/accounts:s4
