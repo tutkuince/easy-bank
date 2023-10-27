@@ -1,0 +1,18 @@
+Build your container image with:
+    mvn compile jib:build
+    - If you don't want to install Docker inside your local system, but at the same time you want to
+    convert you application to a Docker image, then you can use a command which is Maven compile jib build.
+
+
+Running a Spring Boot app as a container using Google Jib
+
+Steps to be followed
+1) Add the configurations like mentioned on the right hand side inside the pom.xml. Make sure to pass the image name details.
+2) Run the maven command "mvn compile jib:dockerBuild" from the location where pom.xml is present to generate the docker image
+without the need of Dockerfile
+3) Execute the docker command "docker run -p 9000:9000 tutkuince/cards:s4". This will start the docker container based on the docker image
+name and port mapping provided.
+
+Google Jib offer an alternative approach to Dockerfiles, prioritizing consistency, security, performance, and governance.
+With Jib, developers can automatically generate production ready OCI images from their application source code without the need to
+write a Dockerfile and even local Docker setup.
