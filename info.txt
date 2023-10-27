@@ -1,0 +1,62 @@
+Important Docker Commands
+
+- docker images
+    + To list all the docker images present in the Docker server
+- docker image inspect [image_id]
+    + To display detailed image information for a given image id
+- docker image rm [image_id]
+    + To remove one or more images for a given image ids
+- docker build . -t [image_name]
+    + To generate a docker image based on a Dockerfile
+- docker run -p [host_port]:[container_port] [image_name]
+    + To start a docker container based on a given image
+- docker ps
+    + To show all running containers
+- docker ps -a
+    + To show all containers including running and stopped
+- docker container start [container_id]
+    + To start one or more stopped containers
+- docker container pause [container_id]
+    + To pause all processes within one or more containers
+- docker container unpause [container_id]
+    + To resume/unpause all processes within one or more containers
+- docker container stop [container_id]
+    + To stop one or more running containers
+- docker container kill [container_id]
+    + To kill one or more running containers instantly
+- docker container restart [container_id]
+    + To restart one or more containers
+- docker container inspect [container_id]
+    + To inspect all the details for a given container id
+- docker container logs [container_id]
+    + To fetch the logs of a given container id
+- docker container logs -f [container_id]
+    + To follow log output of a given container id
+- docker rm [container_id]
+    + To remove one or more containers based on container ids
+- docker container prune
+    + To remove all stopped containers
+- docker image push [container_registry/username:tag]
+    + To push an image from a container registry
+- docker image pull [container_registry/username:tag]
+    + To pull an image from a container registry
+- docker image prune
+    + To remove all unused images
+- docker container stats
+    + To show all containers statistics like CPU, memory, I/O usage
+- Docker system prune
+    + Remove stopped containers, dangling images, and unused networks, volumes, and cache
+- docker rmi [image_id]
+    + To remove one or more images based on image ids
+- docker login -u [username]
+    + To login in to docker hub container registry
+- docker logout
+    + To login out from docker hub container registry
+- docker history [image_name]
+    + Display the intermediate layers and commands that were executed when building the image
+- docker exec -it [container_id] sh
+    + To open a shell inside a running container and execute commands
+- docker compose up
+    + To create and start containers based on given docker compose file
+- docker compose down
+    + To stop and remove containers fro services defined in the Compose file
