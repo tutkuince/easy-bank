@@ -36,5 +36,9 @@ networks:
   easybank:
     driver: bridge
 
-# to run this file: "docker compose up -d"
-# to stop and remove all containers: "docker compose down"
+# we need to run that commands in the same path with docker-compose.yml file.
+# to run this file:                   "docker compose up -d"
+# to stop and remove all containers:  "docker compose down"
+
+# to just stop all containers:    "docker compose stop"
+# to run that stopped containers: "docker compose start"
