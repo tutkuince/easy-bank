@@ -1,4 +1,5 @@
 Important Docker Commands
+
 - docker images
     + To list all the docker images present in the Docker server
 - docker image inspect [image_id]
