@@ -61,3 +61,28 @@ Important Docker Commands
     + To create and start containers based on given docker compose file
 - docker compose down
     + To stop and remove containers fro services defined in the Compose file
+
+15 Factor Methodologies
+- One codebase, one application
+    + Each application has a dedicated codebase. Shared code is managed separately as a library, allowing it to be utilized as a dependency
+    or as a standalone service, serving as a backing service for other applications. It is possible to track each codebase in its own repository,
+    providing flexibility and organization.
+    + In this methodology, a deployment refers to an operational instance of the application.
+- API First
+    + In a cloud-native ecosystem, a typical setup consists of various services that interact through APIs.
+    Adopting an API-first approach during the design phase of a cloud-native application encourages a mindset
+    with distributed systems and promotes the division of work among multiple teams.
+- Dependency Management
+    + It is crucial to explicitly declare all dependencies opf an application in a manifest and ensure that they are accessible to the
+    dependency manager, which can download them from a central repository.
+- Design, build, release, run
+    + Design stage: Determine technologies, dependencies, and tools for specific application features.
+    + Build stage:  Compile and package the codebase with dependencies, creating an immutable artifact(build). Unique identification
+    of the build artifact is essential.
+    + Release stage: Combine the build with a specific deployment configuration. Each release is immutable and uniquely identifiable,
+    such as through semantic versioning or timestamp. Central repository storage facilitates easy access, including rollbacks if needed.
+    + Run stage: Execute the application in the designated runtime environment using a specific release.
+- Configuration, credentials & code
+    + Configuration encompasses all elements prone to change between deployments. It emphasizes the ability to modify application configuration independently,
+    without code changes or the need to rebuild the application.
+    + Configuration may include resources handles for banking services, credentials for accessing third-party APIs, and feature flags.
