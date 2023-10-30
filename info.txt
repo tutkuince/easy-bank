@@ -86,3 +86,38 @@ Important Docker Commands
     + Configuration encompasses all elements prone to change between deployments. It emphasizes the ability to modify application configuration independently,
     without code changes or the need to rebuild the application.
     + Configuration may include resources handles for banking services, credentials for accessing third-party APIs, and feature flags.
+- Logs
+    + In a cloud-native application, log routing and storage are not hte application's concern. Instead, applications should direct their logs to the
+    standard output, treating them as sequentially ordered events based on time.
+    + The responsibility of log storage and rotation is now shifted to an external tool, known as a log aggregator.
+- Disposability
+    + During high-load periods, additional instances of the application can be spun up to handle the increased workload. This concept is referred to
+    as application disposability, where applications can be started or stopped as needed.
+- Backing Services
+    + Backing services refer to external resources that an application relies on to provide its functionality. These resources can include databases,
+    message brokers, caching systems, SMTP servers, FTP servers, or RESTful web services. By treating these services as attached resources, you can
+    modify or replace them without needing to make changes to the application code.
+- Environment Parity
+    + Environment parity aims to minimize differences between various environments & avoiding costly shortcuts. Here, the adoption of containers
+    can greatly contribute by promoting the same execution environment.
+    + There are three gaps that this factor addresses:
+        * Time gap: The time it takes for a code change to be deployed can be significant. The methodology encourages automation and continuous deployment
+        to reduce the time between code development and production deployment.
+        * People gap: Developers create applications, while operators handle their deployment in production. To bridge this gap,
+        a DevOps culture promotes collaboration between developers and operators, fostering the "you build it, you run it" philosophy.
+        * Tools gap: Handling of backing services differs across environments. For instance, developers might use the H2 database locally but PostgreSQL
+        in production. To achieve environment parity, it is recommended to use the same type and version of backing services across all environments.
+- Administrative Process
+    + Management tasks required to support applications, such as database migrations, batch jobs, or maintenance tasks, should be treated as isolated processes.
+    Similar to application processes, the code for these administrative tasks should be version controlled, packed alongside the application, and executed
+    within the same environment
+- Port binding
+    + Cloud native applications, adhering to the 15-Factor methodology, should be self-contained and expose their services through port binding.
+    In production environments, routing services may be employed to translate requests from public endpoints to the internally port-bound services.
+- Stateless Processes
+    + Cloud native applications are often developed with high scalability in mind. One of the key principles to achieve scalability is designing
+    applications as stateless processes and adopting a share-noting architecture. This means that no state should be shared among different instances of the app.
+- Concurrency
+    + Scalability is not solely achieved by creating stateless applications. While statelessness is important, scalability also requires the ability
+    to serve a larger number of users. This means that applications should support concurrent processing to handle multiple users simultaneously.
+    + In JVM applications, concurrency is typically managed through the use of multiple threads, which are available from thread pools.
