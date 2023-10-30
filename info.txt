@@ -121,3 +121,9 @@ Important Docker Commands
     + Scalability is not solely achieved by creating stateless applications. While statelessness is important, scalability also requires the ability
     to serve a larger number of users. This means that applications should support concurrent processing to handle multiple users simultaneously.
     + In JVM applications, concurrency is typically managed through the use of multiple threads, which are available from thread pools.
+- Telemetry
+    + Telemetry data, such as logs, metrics traces, health status, and events, plays a vital role in providing this visibility.
+- Authentication and Authorization
+    + Security is a critical aspect of a software system, yet it often doesn't receive the necessary emphasis it deserves. To uphold a zero-trust
+    approach, it is essential to ensure the security of every interaction within the system, encompassing architectural and infrastructural levels.
+    While security involves more than just authentication and authorization, these aspects serve as a solid starting point.
