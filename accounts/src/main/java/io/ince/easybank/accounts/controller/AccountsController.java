@@ -1,6 +1,7 @@
 package io.ince.easybank.accounts.controller;
 
 import io.ince.easybank.accounts.constants.AccountConstants;
+import io.ince.easybank.accounts.dto.AccountsContactInfoDto;
 import io.ince.easybank.accounts.dto.CustomerDto;
 import io.ince.easybank.accounts.dto.ErrorResponseDto;
 import io.ince.easybank.accounts.dto.ResponseDto;
@@ -36,13 +37,17 @@ public class AccountsController {
     @Value("${build.version}")
     private String buildVersion;
     private Environment environment;
+    private AccountsContactInfoDto accountsContactInfoDto;
 
     @Autowired
     public AccountsController(IAccountsService iAccountsService) {
         this.iAccountsService = iAccountsService;
     }
 
-
+    @Autowired
+    public void setAccountsContactInfoDto(AccountsContactInfoDto accountsContactInfoDto) {
+        this.accountsContactInfoDto = accountsContactInfoDto;
+    }
 
     @Autowired
     public void setEnvironment(Environment environment) {
@@ -190,5 +195,27 @@ public class AccountsController {
     @GetMapping("/java-version")
     public ResponseEntity<String> getJavaVersion() {
         return ResponseEntity.status(HttpStatus.OK).body(environment.getProperty("JAVA_HOME"));
+    }
+
+    @Operation(
+            summary = "Get Contact Info",
+            description = "Contact Info details that can be reached out in case of any issues"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    })
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountsContactInfoDto> getContactInfo() {
+        return ResponseEntity.status(HttpStatus.OK).body(this.accountsContactInfoDto);
     }
 }
