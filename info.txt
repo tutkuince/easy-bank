@@ -127,3 +127,17 @@ Important Docker Commands
     + Security is a critical aspect of a software system, yet it often doesn't receive the necessary emphasis it deserves. To uphold a zero-trust
     approach, it is essential to ensure the security of every interaction within the system, encompassing architectural and infrastructural levels.
     While security involves more than just authentication and authorization, these aspects serve as a solid starting point.
+
+
+Activating the Profile Using Command-Line, JVM & Environment Options
+Modify Run Configuration
++ Environment Variables:
+    SPRING_PROFILES_ACTIVE=prod;BUILD_VERSION=1.4
++ VM Arguments
+    -Dspring.profiles.active=prod -Dbuild.version=1.4
++ Program Arguments
+    --spring.profiles.active=prod --build.version=1.4
+
+1) Command Line Arguments has higher preference. (Program Arguments)
+2) VM Options
+3) Environment Variables
