@@ -137,7 +137,7 @@ Modify Run Configuration
     -Dspring.profiles.active=prod -Dbuild.version=1.4
 + Program Arguments
     --spring.profiles.active=prod --build.version=1.4
-
+- Priority Higher to Lower
 1) Command Line Arguments has higher preference. (Program Arguments)
 2) VM Options
 3) Environment Variables
