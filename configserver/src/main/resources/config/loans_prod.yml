@@ -1,0 +1,11 @@
+build:
+  version: "1.0"
+
+loans:
+  message: "Welcome to EasyBank Loans related prod APIs"
+  contactDetails:
+    name: "Cigdem Ince - Product Owner"
+    email: "cince@easybank.com"
+  onCallSupport:
+    - (777) 555-1234
+    - (777) 555-2345
