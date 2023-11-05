@@ -21,6 +21,10 @@ services:
           memory: 700m
     networks:
       - easybank
+    environment:
+      SPRING_APPLICATION_NAME: "accounts"
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+      SPRING_PROFILES_ACTIVE: default
   loans:
     image: "tutkuince/loans:s6"
     container_name: loans-ms
