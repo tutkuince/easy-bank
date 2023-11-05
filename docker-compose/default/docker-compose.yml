@@ -51,6 +51,10 @@ services:
           memory: 700m
     networks:
       - easybank
+    environment:
+      SPRING_APPLICATION_NAME: "cards"
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+      SPRING_PROFILES_ACTIVE: default
 networks:
   easybank:
     driver: bridge
