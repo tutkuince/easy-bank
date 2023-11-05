@@ -1,6 +1,17 @@
 services:
+  configserver:
+    image: "tutkuince/configserver:s6"
+    container_name: configserver-ms
+    ports:
+      - "8071:8071"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - easybank
   accounts:
-    image: "tutkuince/accounts:s4"
+    image: "tutkuince/accounts:s6"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -11,7 +22,7 @@ services:
     networks:
       - easybank
   loans:
-    image: "tutkuince/loans:s4"
+    image: "tutkuince/loans:s6"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -22,7 +33,7 @@ services:
     networks:
       - easybank
   cards:
-    image: "tutkuince/cards:s4"
+    image: "tutkuince/cards:s6"
     container_name: cards-ms
     ports:
       - "9000:9000"
