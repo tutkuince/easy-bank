@@ -33,7 +33,7 @@ services:
       service: microservice-db-config
 
   configserver:
-    image: "tutkuince/configserver:s6"
+    image: "tutkuince/configserver:s7"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -51,7 +51,7 @@ services:
       service: microservice-base-config
 
   accounts:
-    image: "tutkuince/accounts:s6"
+    image: "tutkuince/accounts:s7"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -68,7 +68,7 @@ services:
 
 
   loans:
-    image: "tutkuince/loans:s6"
+    image: "tutkuince/loans:s7"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -83,7 +83,7 @@ services:
       service: microservice-configserver-config
 
   cards:
-    image: "tutkuince/cards:s6"
+    image: "tutkuince/cards:s7"
     container_name: cards-ms
     ports:
       - "9000:9000"
