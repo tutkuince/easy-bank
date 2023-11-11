@@ -13,7 +13,6 @@ import java.time.LocalDateTime;
 )
 @Data
 @AllArgsConstructor
-
 public class ErrorResponseDto {
     @Schema(
             description = "API path invoked by client"
