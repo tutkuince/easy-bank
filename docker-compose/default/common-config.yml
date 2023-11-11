@@ -6,15 +6,15 @@ services:
   microservice-db-config:
     extends:
       service: network-deploy-service
-    image: mariadb
+    image: mysql
     healthcheck:
-      test: [ "CMD", "madiadbadmin", "ping", "-h", "localhost" ]
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
       timeout: 10s
       retries: 10
       interval: 10s
       start_period: 10s
     environment:
-      MARIADB_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
 
   microservice-base-config:
     extends:
@@ -23,8 +23,6 @@ services:
       resources:
         limits:
           memory: 700m
-    environment:
-      SPRING_RABBITMQ_HOST: "rabbit"
 
   microservice-configserver-config:
     extends:
