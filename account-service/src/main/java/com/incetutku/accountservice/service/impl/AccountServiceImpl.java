@@ -5,6 +5,8 @@ import com.incetutku.accountservice.dto.CustomerDto;
 import com.incetutku.accountservice.entity.Account;
 import com.incetutku.accountservice.entity.Customer;
 import com.incetutku.accountservice.exception.CustomerAlreadyExistsException;
+import com.incetutku.accountservice.exception.ResourceNotFoundException;
+import com.incetutku.accountservice.mapper.AccountMapper;
 import com.incetutku.accountservice.mapper.CustomerMapper;
 import com.incetutku.accountservice.repository.AccountRepository;
 import com.incetutku.accountservice.repository.CustomerRepository;
@@ -12,7 +14,6 @@ import com.incetutku.accountservice.service.IAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
@@ -35,6 +36,20 @@ public class AccountServiceImpl implements IAccountService {
         Customer savedCustomer = customerRepository.save(customer);
         Account savableAccount = createNewAccount(customer);
         accountRepository.save(savableAccount);
+    }
+
+    @Override
+    public CustomerDto fetchAccountByMobileNumber(String mobileNumber) {
+        Customer customer = customerRepository.findByMobileNumber(mobileNumber)
+                .orElseThrow(() -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber));
+
+        Account account = accountRepository.findByCustomerId(customer.getCustomerId())
+                .orElseThrow(() -> new ResourceNotFoundException("Account", "customerId", customer.getCustomerId().toString()));
+
+        CustomerDto customerDto = CustomerMapper.mapToCustomerDto(customer);
+        customerDto.setAccountDto(AccountMapper.mapToAccountDto(account));
+
+        return customerDto;
     }
 
     private Account createNewAccount(Customer customer) {
