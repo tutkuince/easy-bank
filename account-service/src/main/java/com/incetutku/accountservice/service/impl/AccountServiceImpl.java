@@ -1,21 +1,50 @@
 package com.incetutku.accountservice.service.impl;
 
+import com.incetutku.accountservice.constants.AccountConstants;
 import com.incetutku.accountservice.dto.CustomerDto;
+import com.incetutku.accountservice.entity.Account;
+import com.incetutku.accountservice.entity.Customer;
+import com.incetutku.accountservice.exception.CustomerAlreadyExistsException;
+import com.incetutku.accountservice.mapper.CustomerMapper;
 import com.incetutku.accountservice.repository.AccountRepository;
 import com.incetutku.accountservice.repository.CustomerRepository;
 import com.incetutku.accountservice.service.IAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Optional;
+import java.util.Random;
+
 @Service
 @RequiredArgsConstructor
-public class AccountService implements IAccountService {
+public class AccountServiceImpl implements IAccountService {
 
     private final AccountRepository accountRepository;
     private final CustomerRepository customerRepository;
 
     @Override
     public void createAccount(CustomerDto customerDto) {
+        Customer customer = CustomerMapper.mapToCustomer(customerDto);
+        Optional<Customer> optionalCustomer = customerRepository.findByMobileNumber(customerDto.getMobileNumber());
+        if (optionalCustomer.isPresent()) {
+            throw new CustomerAlreadyExistsException("Customer already registered with given mobile number " + customerDto.getMobileNumber());
+        }
+        customer.setCreatedBy("Anonymous");
+        // customer.setCreatedAt(LocalDateTime.now());
+        Customer savedCustomer = customerRepository.save(customer);
+        Account savableAccount = createNewAccount(customer);
+        accountRepository.save(savableAccount);
+    }
 
+    private Account createNewAccount(Customer customer) {
+        Account newAccount = new Account();
+        newAccount.setCustomerId(customer.getCustomerId());
+        long randomAccountNumber = 1000000000L + new Random().nextInt(900000000);
+
+        newAccount.setAccountNumber(randomAccountNumber);
+        newAccount.setAccountType(AccountConstants.SAVINGS);
+        newAccount.setBranchAddress(AccountConstants.ADDRESS);
+        return newAccount;
     }
 }
