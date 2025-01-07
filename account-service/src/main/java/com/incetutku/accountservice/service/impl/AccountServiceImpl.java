@@ -1,6 +1,7 @@
 package com.incetutku.accountservice.service.impl;
 
 import com.incetutku.accountservice.constants.AccountConstants;
+import com.incetutku.accountservice.dto.AccountDto;
 import com.incetutku.accountservice.dto.CustomerDto;
 import com.incetutku.accountservice.entity.Account;
 import com.incetutku.accountservice.entity.Customer;
@@ -14,6 +15,7 @@ import com.incetutku.accountservice.service.IAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
@@ -26,7 +28,7 @@ public class AccountServiceImpl implements IAccountService {
 
     @Override
     public void createAccount(CustomerDto customerDto) {
-        Customer customer = CustomerMapper.mapToCustomer(customerDto);
+        Customer customer = CustomerMapper.mapToCustomer(customerDto, new Customer());
         Optional<Customer> optionalCustomer = customerRepository.findByMobileNumber(customerDto.getMobileNumber());
         if (optionalCustomer.isPresent()) {
             throw new CustomerAlreadyExistsException("Customer already registered with given mobile number " + customerDto.getMobileNumber());
@@ -39,6 +41,30 @@ public class AccountServiceImpl implements IAccountService {
     }
 
     @Override
+    public boolean updateAccount(CustomerDto customerDto) {
+        boolean isUpdated = false;
+
+        AccountDto accountDto = customerDto.getAccountDto();
+        if (!Objects.isNull(accountDto)) {
+            Account account = accountRepository.findById(accountDto.getAccountNumber()).orElseThrow(
+                    () -> new ResourceNotFoundException("Account", "accountNumber", accountDto.getAccountNumber().toString())
+            );
+            AccountMapper.mapToAccount(accountDto, account);
+            account = accountRepository.save(account);
+
+            Long customerId = account.getCustomerId();
+            Customer customer = customerRepository.findById(customerId).orElseThrow(
+                    () -> new ResourceNotFoundException("Customer", "customerId", customerId.toString())
+            );
+            CustomerMapper.mapToCustomer(customerDto, customer);
+            customer = customerRepository.save(customer);
+            isUpdated = true;
+        }
+
+        return isUpdated;
+    }
+
+    @Override
     public CustomerDto fetchAccountByMobileNumber(String mobileNumber) {
         Customer customer = customerRepository.findByMobileNumber(mobileNumber)
                 .orElseThrow(() -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber));
@@ -46,8 +72,8 @@ public class AccountServiceImpl implements IAccountService {
         Account account = accountRepository.findByCustomerId(customer.getCustomerId())
                 .orElseThrow(() -> new ResourceNotFoundException("Account", "customerId", customer.getCustomerId().toString()));
 
-        CustomerDto customerDto = CustomerMapper.mapToCustomerDto(customer);
-        customerDto.setAccountDto(AccountMapper.mapToAccountDto(account));
+        CustomerDto customerDto = CustomerMapper.mapToCustomerDto(customer, new CustomerDto());
+        customerDto.setAccountDto(AccountMapper.mapToAccountDto(account, new AccountDto()));
 
         return customerDto;
     }
