@@ -7,6 +7,10 @@
     <list default="true" id="46766158-4430-45a8-95e9-349c5afac82b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/controller/AccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/entity/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/entity/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/service/IAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/service/IAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/service/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/service/impl/AccountServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +106,8 @@
       <workItem from="1735928612317" duration="61000" />
       <workItem from="1735928681720" duration="3801000" />
       <workItem from="1736003055657" duration="3405000" />
-      <workItem from="1736173236692" duration="5971000" />
+      <workItem from="1736173236692" duration="5991000" />
+      <workItem from="1736248856331" duration="3427000" />
     </task>
     <servers />
   </component>
