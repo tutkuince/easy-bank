@@ -88,4 +88,14 @@ public class AccountServiceImpl implements IAccountService {
         newAccount.setBranchAddress(AccountConstants.ADDRESS);
         return newAccount;
     }
+
+    @Override
+    public boolean deleteAccountByMobileNumber(String mobileNumber) {
+        Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(
+                () -> new ResourceNotFoundException("Customer", "mobileNumber", mobileNumber)
+        );
+        accountRepository.deleteByCustomerId(customer.getCustomerId());
+        customerRepository.deleteById(customer.getCustomerId());
+        return true;
+    }
 }

@@ -21,4 +21,10 @@ public interface IAccountService {
      */
     CustomerDto fetchAccountByMobileNumber(String mobileNumber);
 
+    /**
+     * @param mobileNumber - Input Mobile Number
+     * @return boolean indicating if the delete of Account details is successful or not
+     */
+    boolean deleteAccountByMobileNumber(String mobileNumber);
+
 }

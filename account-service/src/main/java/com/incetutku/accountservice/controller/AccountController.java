@@ -39,4 +39,15 @@ public class AccountController {
     public ResponseEntity<CustomerDto> fetchAccountDetailsByMobileNumber(@RequestParam String mobileNumber) {
         return ResponseEntity.ok(accountService.fetchAccountByMobileNumber(mobileNumber));
     }
+
+    @DeleteMapping
+    public ResponseEntity<ResponseDto> deleteAccountByMobileNumber(@RequestParam String mobileNumber) {
+        boolean isDeleted = accountService.deleteAccountByMobileNumber(mobileNumber);
+        if (isDeleted) {
+            return ResponseEntity.ok(new ResponseDto(AccountConstants.STATUS_200, AccountConstants.MESSAGE_200));
+        }
+        return ResponseEntity
+                .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ResponseDto(AccountConstants.STATUS_500, AccountConstants.MESSAGE_500));
+    }
 }
