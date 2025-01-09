@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.incetutku</groupId>
-    <artifactId>loans-service</artifactId>
+    <artifactId>card-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>loans-service</name>
-    <description>loans-service</description>
+    <name>card-service</name>
+    <description>card-service</description>
     <url/>
     <licenses>
         <license/>

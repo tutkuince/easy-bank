@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="46766158-4430-45a8-95e9-349c5afac82b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="46766158-4430-45a8-95e9-349c5afac82b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,11 +67,27 @@
       <recent name="com.incetutku.accountservice.entity" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.AccountServiceApplication">
     <configuration name="AccountServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="account-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.incetutku.accountservice.AccountServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="card-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.incetutku.cardservice.CardServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoansServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="loans-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.incetutku.loansservice.LoansServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,6 +119,7 @@
       <workItem from="1736248856331" duration="9599000" />
       <workItem from="1736341171028" duration="7227000" />
       <workItem from="1736429482589" duration="3024000" />
+      <workItem from="1736438066393" duration="27000" />
     </task>
     <servers />
   </component>
