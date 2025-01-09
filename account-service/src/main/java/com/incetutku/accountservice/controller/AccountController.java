@@ -2,9 +2,12 @@ package com.incetutku.accountservice.controller;
 
 import com.incetutku.accountservice.constants.AccountConstants;
 import com.incetutku.accountservice.dto.CustomerDto;
+import com.incetutku.accountservice.dto.ErrorResponseDto;
 import com.incetutku.accountservice.dto.ResponseDto;
 import com.incetutku.accountservice.service.IAccountService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -49,14 +52,21 @@ public class AccountController {
             summary = "Update Account Details REST API",
             description = "REST API to update Customer and Account Details based on account number"
     )
-    @ApiResponses( {
+    @ApiResponses({
             @ApiResponse(
                     responseCode = "200",
                     description = "HTTP Status OK"
             ),
             @ApiResponse(
+                    responseCode = "417",
+                    description = "HTTP Status Expectation Failed"
+            ),
+            @ApiResponse(
                     responseCode = "500",
-                    description = "HTTP Status Internal Server Error"
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
             )
     })
     @PutMapping("/update")
@@ -65,8 +75,8 @@ public class AccountController {
         if (isUpdated) {
             return ResponseEntity.ok(new ResponseDto(AccountConstants.STATUS_200, AccountConstants.MESSAGE_200));
         }
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(new ResponseDto(AccountConstants.STATUS_500, AccountConstants.MESSAGE_500));
+        return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED)
+                .body(new ResponseDto(AccountConstants.STATUS_417, AccountConstants.MESSAGE_417_UPDATE));
     }
 
     @Operation(
@@ -90,14 +100,21 @@ public class AccountController {
             summary = "Delete Account & Customer Details REST API",
             description = "REST API to delete Customer and Account Details based on mobile number"
     )
-    @ApiResponses( {
+    @ApiResponses({
             @ApiResponse(
                     responseCode = "200",
                     description = "HTTP Status OK"
             ),
             @ApiResponse(
+                    responseCode = "417",
+                    description = "HTTP Status Expectation Failed"
+            ),
+            @ApiResponse(
                     responseCode = "500",
-                    description = "HTTP Status Internal Server Error"
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
             )
     })
     @DeleteMapping
@@ -111,7 +128,7 @@ public class AccountController {
             return ResponseEntity.ok(new ResponseDto(AccountConstants.STATUS_200, AccountConstants.MESSAGE_200));
         }
         return ResponseEntity
-                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(new ResponseDto(AccountConstants.STATUS_500, AccountConstants.MESSAGE_500));
+                .status(HttpStatus.EXPECTATION_FAILED)
+                .body(new ResponseDto(AccountConstants.STATUS_417, AccountConstants.MESSAGE_417_DELETE));
     }
 }
