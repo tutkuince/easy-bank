@@ -27,7 +27,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
                 )
         ),
         externalDocs = @ExternalDocumentation(
-                description = "EasyBank Account Service REST API Documentation",
+                description = "EasyBank Loan Service REST API Documentation",
                 url = "http://localhost:8080/swagger-ui/index.html"
         )
 )
