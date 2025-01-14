@@ -5,30 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46766158-4430-45a8-95e9-349c5afac82b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/audit/AuditAwareImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/constants/CardConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/controller/CardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/dto/CardDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/dto/ErrorResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/dto/ResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/entity/Card.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/exception/CardAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/mapper/CardMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/repository/CardRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/service/ICardService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/service/impl/CardServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/resources/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/CardServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/CardServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-service/src/main/java/com/incetutku/loansservice/LoansServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans-service/src/main/java/com/incetutku/loansservice/LoansServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-service/src/main/java/com/incetutku/loansservice/entity/Loan.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans-service/src/main/java/com/incetutku/loansservice/entity/Loan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +48,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.account-service [clean].executor": "Run",
+    "Maven.account-service [install].executor": "Run",
+    "Maven.account-service [package].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -92,7 +76,7 @@
     "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
     "service.view.auto.scroll.to.source": "true",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -180,7 +164,8 @@
       <workItem from="1736429482589" duration="3024000" />
       <workItem from="1736438066393" duration="27000" />
       <workItem from="1736438228257" duration="1314000" />
-      <workItem from="1736516265085" duration="10554000" />
+      <workItem from="1736516265085" duration="11824000" />
+      <workItem from="1736857559750" duration="2207000" />
     </task>
     <servers />
   </component>
