@@ -2,10 +2,13 @@
 FROM openjdk:17-jdk-slim
 
 # Information around who maintains the image
-MAINTAINER tutkuince
+LABEL maintainer="Tutku Ince <incetutku@gmail.com>"
 
-# Add the aplication's jar to the image
-COPY target/account-service-0.0.1-SNAPSHOT.jar account-service-0.0.1-SNAPSHOT.jar
+# The application's jar file - defines the JAR_FILE variable set by dockerfile-maven-plugin
+ARG JAR_FILE=target/*.jar
+
+# Add the application's jar to the container
+COPY ${JAR_FILE} /app.jar
 
 # Execute the application
-ENTRYPOINT ["java", "-jar", "account-service-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
