@@ -1,5 +1,6 @@
 Important Docker Commands
 
+-p 8081:8081 (where the first value represents the external port and the second value represents the container port)
 
 - docker images
     + To list all the docker images present in the Docker server
