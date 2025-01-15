@@ -64,6 +64,8 @@ Important Docker Commands
     + To stop and remove containers fro services defined in the Compose file
 
 Running a Spring Boot app as a container using BuildPacks
+- Cloud Native Buildpacks offer an alternative approach to Dockerfiles, prioritizing consistency, security, performance and governance.
+- With Buildpacks, developers can automatically generate production-ready OCI images from their application source code without the need to write a Dockerfile.
 1) Add the configurations like mentioned on the below side inside the pom.xml. Make sure to pass the image name details.
 <build>
     <plugins>
