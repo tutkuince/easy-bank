@@ -63,6 +63,31 @@ Important Docker Commands
 - docker compose down
     + To stop and remove containers fro services defined in the Compose file
 
+Running a Spring Boot app as a container using BuildPacks
+1) Add the configurations like mentioned on the below side inside the pom.xml. Make sure to pass the image name details.
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <image>
+                    <name>tutkuince/${project.artifactId}:${project.version}</name>
+                </image>
+                <excludes>
+                    <exclude>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                    </exclude>
+                </excludes>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+2) Run the maven command "mvn spring-boot:build-image" from the location where pom.xml is present to generate the docker image without
+the need of Dockerfile.
+3) Execute the docker command "docker run -p 8090:8090 tutkuince/loans-service:current_version"
+
 15 Factor Methodologies
 - One codebase, one application
     + Each application has a dedicated codebase. Shared code is managed separately as a library, allowing it to be utilized as a dependency
