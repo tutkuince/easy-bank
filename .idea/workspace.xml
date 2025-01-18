@@ -7,7 +7,6 @@
     <list default="true" id="46766158-4430-45a8-95e9-349c5afac82b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +189,7 @@
       <workItem from="1736939695190" duration="4172000" />
       <workItem from="1737029423282" duration="4000" />
       <workItem from="1737038823462" duration="1515000" />
-      <workItem from="1737213355006" duration="2903000" />
+      <workItem from="1737213355006" duration="3643000" />
     </task>
     <servers />
   </component>
