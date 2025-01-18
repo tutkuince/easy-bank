@@ -1,6 +1,7 @@
 package com.incetutku.accountservice.controller;
 
 import com.incetutku.accountservice.constants.AccountConstants;
+import com.incetutku.accountservice.dto.AccountContactInfoDto;
 import com.incetutku.accountservice.dto.CustomerDto;
 import com.incetutku.accountservice.dto.ErrorResponseDto;
 import com.incetutku.accountservice.dto.ResponseDto;
@@ -34,6 +35,7 @@ public class AccountController {
 
     private final IAccountService accountService;
     private final Environment environment;
+    private final AccountContactInfoDto accountContactInfoDto;
 
     @Value("${build.version}")
     private String buildVersion;
@@ -182,5 +184,29 @@ public class AccountController {
     @GetMapping("/java-version")
     public ResponseEntity<String> getBuildInfo() {
         return ResponseEntity.status(HttpStatus.OK).body(environment.getProperty("JAVA_HOME"));
+    }
+
+    @Operation(
+            summary = "Get Contact Information REST API",
+            description = "Get Contact information that is deployed into account service"
+    )
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "HTTP Status OK"
+            ),
+            @ApiResponse(
+                    responseCode = "500",
+                    description = "HTTP Status Internal Server Error",
+                    content = @Content(
+                            schema = @Schema(implementation = ErrorResponseDto.class)
+                    )
+            )
+    })
+
+    @GetMapping("/contact-info")
+    public ResponseEntity<AccountContactInfoDto> getContactInfo() {
+        AccountContactInfoDto result = accountContactInfoDto;
+        return ResponseEntity.status(HttpStatus.OK).body(accountContactInfoDto);
     }
 }
