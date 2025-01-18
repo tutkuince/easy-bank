@@ -18,3 +18,5 @@ spring:
     console:
       enabled: true
 
+build:
+  version: "1.0"
