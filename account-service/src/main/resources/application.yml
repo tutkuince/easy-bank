@@ -2,6 +2,14 @@ server:
   port: 8080
 
 spring:
+  profiles:
+    active: "qa"
+
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+
   datasource:
     url: jdbc:h2:mem:accountDB
     driver-class-name: org.h2.Driver
@@ -19,7 +27,7 @@ spring:
       enabled: true
 
 build:
-  version: "1.0"
+  version: "3.0"
 
 account-service:
   message: "Welcome to EasyBank account related local APIs"
