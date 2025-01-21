@@ -157,7 +157,6 @@ public class AccountController {
                     )
             )
     })
-
     @GetMapping("/build-info")
     public ResponseEntity<String> getJavaVersion() {
         return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
@@ -180,7 +179,6 @@ public class AccountController {
                     )
             )
     })
-
     @GetMapping("/java-version")
     public ResponseEntity<String> getBuildInfo() {
         return ResponseEntity.status(HttpStatus.OK).body(environment.getProperty("JAVA_HOME"));
@@ -203,10 +201,8 @@ public class AccountController {
                     )
             )
     })
-
     @GetMapping("/contact-info")
     public ResponseEntity<AccountContactInfoDto> getContactInfo() {
-        AccountContactInfoDto result = accountContactInfoDto;
         return ResponseEntity.status(HttpStatus.OK).body(accountContactInfoDto);
     }
 }
