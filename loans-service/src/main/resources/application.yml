@@ -2,6 +2,14 @@ server:
   port: 8090
 
 spring:
+  profiles:
+    active: "qa"
+
+  config:
+    import:
+      - "application_qa.yml"
+      - "application_prod.yml"
+
   datasource:
     url: jdbc:h2:mem:loanDB
     driver-class-name: org.h2.Driver
