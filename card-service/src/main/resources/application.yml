@@ -22,7 +22,7 @@ build:
   version: "3.0"
 
 card-service:
-  message: "Welcome to EasyBank account related local APIs"
+  message: "Welcome to EasyBank card related local APIs"
   contact-details:
     name: "Tutku Ince - Developer"
     email: "tince@mail.com"
