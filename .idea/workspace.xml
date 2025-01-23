@@ -6,10 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="46766158-4430-45a8-95e9-349c5afac82b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/java/com/incetutku/configserver/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/java/com/incetutku/configserver/ConfigServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card-service/src/main/resources/application_prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/card-service/src/main/resources/application_qa.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-service/src/main/resources/application_prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans-service/src/main/resources/application_qa.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +66,14 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.AccountServiceApplication.executor": "Run",
     "Spring Boot.CardServiceApplication.executor": "Run",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
     "Spring Boot.LoansServiceApplication.executor": "Run",
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "azul-17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tutku/IdeaProjects/easy-bank/config-server",
+    "last_opened_file_path": "C:/Users/tutku/IdeaProjects/easy-bank/config-server/src/main/resources/config",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,11 +95,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tutku\IdeaProjects\easy-bank\config-server\src\main\resources\config" />
       <recent name="C:\Users\tutku\IdeaProjects\easy-bank\loans-service\src\main\resources" />
       <recent name="C:\Users\tutku\IdeaProjects\easy-bank\card-service\src\main\resources" />
       <recent name="C:\Users\tutku\IdeaProjects\easy-bank\account-service\src\main\resources" />
       <recent name="C:\Users\tutku\IdeaProjects\easy-bank\card-service\src\main\java\com\incetutku\cardservice" />
-      <recent name="C:\Users\tutku\IdeaProjects\easy-bank\card-service\src\main\java\com\incetutku\cardservice\exception" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.incetutku.loansservice.dto" />
@@ -112,7 +118,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AccountServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
     <configuration name="AccountServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="account-service" />
@@ -213,7 +219,7 @@
       <workItem from="1737213355006" duration="4587000" />
       <workItem from="1737367463777" duration="5049000" />
       <workItem from="1737460955946" duration="5994000" />
-      <workItem from="1737639610045" duration="1571000" />
+      <workItem from="1737639610045" duration="5562000" />
     </task>
     <servers />
   </component>
