@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+account-service:
+  message: "Welcome to EasyBank account related QA APIs"
+  contact-details:
+    name: "Utku Ince - QA Lead"
+    email: "uince@mail.com"
+  on-call-support:
+    - (333) 333-3333
+    - (333) 336-3636

@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+loan-service:
+  message: "Welcome to EasyBank loan related prod APIs"
+  contact-details:
+    name: "Çiko Ince - Product Owner"
+    email: "cince@mail.com"
+  on-call-support:
+    - (111) 111-1111
+    - (111) 116-1616

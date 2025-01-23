@@ -1,0 +1,11 @@
+build:
+  version: "2.0"
+
+loan-service:
+  message: "Welcome to EasyBank loan related prod APIs"
+  contact-details:
+    name: "Utku Ince - QA Lead"
+    email: "uince@mail.com"
+  on-call-support:
+    - (333) 333-3333
+    - (333) 336-3636
