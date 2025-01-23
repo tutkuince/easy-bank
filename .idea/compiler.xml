@@ -24,12 +24,19 @@
         <module name="loans-service" />
         <module name="card-service" />
       </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="account-service" options="-parameters" />
       <module name="card-service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="loans-service" options="-parameters" />
     </option>
   </component>

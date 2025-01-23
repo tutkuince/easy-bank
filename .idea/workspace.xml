@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46766158-4430-45a8-95e9-349c5afac82b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/dto/CardContactInfoDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/java/com/incetutku/accountservice/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/CardServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/CardServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/controller/CardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/src/main/java/com/incetutku/cardservice/controller/CardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/java/com/incetutku/configserver/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/java/com/incetutku/configserver/ConfigServerApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +67,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "azul-17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tutku/IdeaProjects/easy-bank/account-service/src/main/resources",
+    "last_opened_file_path": "C:/Users/tutku/IdeaProjects/easy-bank/config-server",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,18 +89,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tutku\IdeaProjects\easy-bank\loans-service\src\main\resources" />
+      <recent name="C:\Users\tutku\IdeaProjects\easy-bank\card-service\src\main\resources" />
       <recent name="C:\Users\tutku\IdeaProjects\easy-bank\account-service\src\main\resources" />
       <recent name="C:\Users\tutku\IdeaProjects\easy-bank\card-service\src\main\java\com\incetutku\cardservice" />
       <recent name="C:\Users\tutku\IdeaProjects\easy-bank\card-service\src\main\java\com\incetutku\cardservice\exception" />
-      <recent name="C:\Users\tutku\IdeaProjects\easy-bank\card-service\src\main\java\com\incetutku\cardservice\dto" />
-      <recent name="C:\Users\tutku\IdeaProjects\easy-bank\card-service\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.incetutku.loansservice.dto" />
       <recent name="com.incetutku.cardservice.dto" />
       <recent name="com.incetutku.cardservice.entity" />
       <recent name="com.incetutku.loansservice.exception" />
       <recent name="com.incetutku.loansservice.audit" />
-      <recent name="com.incetutku.loansservice.entity" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -134,6 +132,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="config-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.incetutku.configserver.ConfigServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="LoansServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="loans-service" />
@@ -160,6 +165,7 @@
     </configuration>
     <list>
       <item itemvalue="Docker.account-service/Dockerfile" />
+      <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.AccountServiceApplication" />
       <item itemvalue="Spring Boot.CardServiceApplication" />
       <item itemvalue="Spring Boot.LoansServiceApplication" />
@@ -206,7 +212,8 @@
       <workItem from="1737038823462" duration="1515000" />
       <workItem from="1737213355006" duration="4587000" />
       <workItem from="1737367463777" duration="5049000" />
-      <workItem from="1737460955946" duration="3499000" />
+      <workItem from="1737460955946" duration="5994000" />
+      <workItem from="1737639610045" duration="1571000" />
     </task>
     <servers />
   </component>
