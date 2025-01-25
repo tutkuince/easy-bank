@@ -32,7 +32,7 @@ public class CardController {
     private final Environment environment;
     private final CardContactInfoDto cardContactInfoDto;
 
-    @Value("${build.version}")
+    @Value("${build.version:0}")
     private String buildVersion;
 
     @Operation(

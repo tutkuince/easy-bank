@@ -37,7 +37,7 @@ public class LoanController {
     private final Environment environment;
     private final LoanContactInfoDto loanContactInfoDto;
 
-    @Value("${build.version}")
+    @Value("${build.version:0}")
     private String buildVersion;
 
     @Operation(
