@@ -11,8 +11,9 @@ services:
       timeout: 5s
       retries: 10
       start_period: 5s
-    networks:
-      - easybank
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
 
   config-server:
     image: tutkuince/config-server:0.0.1-SNAPSHOT
@@ -28,69 +29,42 @@ services:
       timeout: 5s
       retries: 10
       start_period: 10s
-    deploy:
-      resources:
-        limits:
-          memory: 700m
-    networks:
-      - easybank
+    extends:
+      file: common-config.yml
+      service: microservice-base-config
 
   account-service:
     image: tutkuince/account-service:0.0.1-SNAPSHOT
     container_name: account-service
     ports:
       - "8080:8080"
-    depends_on:
-      config-server:
-        condition: service_healthy
-    deploy:
-      resources:
-        limits:
-          memory: 700m
-    networks:
-      - easybank
     environment:
       SPRING_APPLICATION_NAME: "account-service"
-      SPRING_CONFIG_IMPORT: "configserver:http://config-server:8071/"
-      SPRING_PROFILES_ACTIVE: default
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
 
   loan-service:
     image: tutkuince/loans-service:0.0.1-SNAPSHOT
     container_name: loan-service
     ports:
       - "8090:8090"
-    depends_on:
-      config-server:
-        condition: service_healthy
-    deploy:
-      resources:
-        limits:
-          memory: 700m
-    networks:
-      - easybank
     environment:
       SPRING_APPLICATION_NAME: "loan-service"
-      SPRING_CONFIG_IMPORT: "configserver:http://config-server:8071/"
-      SPRING_PROFILES_ACTIVE: default
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
 
   card-service:
     image: tutkuince/card-service:0.0.1-SNAPSHOT
     container_name: card-service
     ports:
       - "9000:9000"
-    depends_on:
-      config-server:
-        condition: service_healthy
-    deploy:
-      resources:
-        limits:
-          memory: 700m
-    networks:
-      - easybank
     environment:
       SPRING_APPLICATION_NAME: "card-service"
-      SPRING_CONFIG_IMPORT: "configserver:http://config-server:8071/"
-      SPRING_PROFILES_ACTIVE: default
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
 
 networks:
   easybank:
