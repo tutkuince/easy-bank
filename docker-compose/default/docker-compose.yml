@@ -38,6 +38,9 @@ services:
     container_name: account-service
     ports:
       - "8080:8080"
+    depends_on:
+      config-server:
+        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "account-service"
     extends:
@@ -49,6 +52,9 @@ services:
     container_name: loan-service
     ports:
       - "8090:8090"
+    depends_on:
+      config-server:
+        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "loan-service"
     extends:
@@ -60,6 +66,9 @@ services:
     container_name: card-service
     ports:
       - "9000:9000"
+    depends_on:
+      config-server:
+        condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "card-service"
     extends:
