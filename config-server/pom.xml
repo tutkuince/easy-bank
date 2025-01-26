@@ -12,6 +12,7 @@
     <artifactId>config-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>config-server</name>
+    <packaging>jar</packaging>
     <description>config-server</description>
     <url/>
     <licenses>
@@ -69,12 +70,13 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.3.2</version>
                 <configuration>
-                    <image>
-                        <name>tutkuince/${project.artifactId}:${project.version}</name>
-                    </image>
+                    <to>
+                        <image>tutkuince/${project.name}:${project.version}</image>
+                    </to>
                 </configuration>
             </plugin>
         </plugins>
