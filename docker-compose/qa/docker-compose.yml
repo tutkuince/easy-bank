@@ -30,7 +30,7 @@ services:
       service: microservice-db-config
 
   config-server:
-    image: tutkuince/config-server:0.0.1-SNAPSHOT
+    image: tutkuince/config-server:0.0.2-SNAPSHOT
     container_name: config-server
     ports:
       - "8071:8071"
@@ -48,7 +48,7 @@ services:
       service: microservice-base-config
 
   account-service:
-    image: tutkuince/account-service:0.0.1-SNAPSHOT
+    image: tutkuince/account-service:0.0.2-SNAPSHOT
     container_name: account-service
     ports:
       - "8080:8080"
@@ -64,7 +64,7 @@ services:
       service: microservice-configserver-config
 
   card-service:
-    image: tutkuince/card-service:0.0.1-SNAPSHOT
+    image: tutkuince/card-service:0.0.2-SNAPSHOT
     container_name: card-service
     ports:
       - "9000:9000"
@@ -80,7 +80,7 @@ services:
       service: microservice-configserver-config
 
   loan-service:
-    image: tutkuince/loans-service:0.0.1-SNAPSHOT
+    image: tutkuince/loans-service:0.0.2-SNAPSHOT
     container_name: loan-service
     ports:
       - "8090:8090"
