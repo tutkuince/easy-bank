@@ -10,8 +10,6 @@
       <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans-service/src/main/resources/application.yml" afterDir="false" />
     </list>
@@ -91,7 +89,8 @@
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "h2"
+      "h2",
+      "mysql"
     ]
   }
 }]]></component>
@@ -267,7 +266,7 @@
       <workItem from="1737810739324" duration="401000" />
       <workItem from="1737811150826" duration="6959000" />
       <workItem from="1737913748965" duration="4874000" />
-      <workItem from="1737985622990" duration="6355000" />
+      <workItem from="1737985622990" duration="8002000" />
     </task>
     <servers />
   </component>
