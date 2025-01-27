@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="46766158-4430-45a8-95e9-349c5afac82b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/account-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/card-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card-service/src/main/resources/application_prod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/card-service/src/main/resources/application_qa.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-service/src/main/resources/application_prod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans-service/src/main/resources/application_qa.yml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +54,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Docker.account-service/Dockerfile.executor": "Run",
+    "Docker.default/Dockerfile.executor": "Run",
+    "Docker.default: Compose Deployment.executor": "Run",
+    "JUnit.AccountServiceApplicationTests.executor": "Run",
     "Maven.account-service [clean].executor": "Run",
     "Maven.account-service [install].executor": "Run",
     "Maven.account-service [package].executor": "Run",
@@ -73,7 +75,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "azul-17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tutku/IdeaProjects/easy-bank/config-server/src/main/resources/config",
+    "last_opened_file_path": "C:/Users/tutku/IdeaProjects/easy-bank/docker-compose/qa",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,11 +97,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tutku\IdeaProjects\easy-bank\docker-compose\qa" />
+      <recent name="C:\Users\tutku\IdeaProjects\easy-bank\docker-compose\prod" />
       <recent name="C:\Users\tutku\IdeaProjects\easy-bank\config-server\src\main\resources\config" />
       <recent name="C:\Users\tutku\IdeaProjects\easy-bank\loans-service\src\main\resources" />
       <recent name="C:\Users\tutku\IdeaProjects\easy-bank\card-service\src\main\resources" />
-      <recent name="C:\Users\tutku\IdeaProjects\easy-bank\account-service\src\main\resources" />
-      <recent name="C:\Users\tutku\IdeaProjects\easy-bank\card-service\src\main\java\com\incetutku\cardservice" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.incetutku.loansservice.dto" />
@@ -119,6 +121,21 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ConfigServerApplication">
+    <configuration name="AccountServiceApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="account-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.incetutku.accountservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.incetutku.accountservice" />
+      <option name="MAIN_CLASS_NAME" value="com.incetutku.accountservice.AccountServiceApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AccountServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="account-service" />
@@ -153,6 +170,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
         <settings />
@@ -169,8 +190,27 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="default: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose/default/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="default/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose/default/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Docker.default: Compose Deployment" />
+      <item itemvalue="Docker.default/Dockerfile" />
       <item itemvalue="Docker.account-service/Dockerfile" />
+      <item itemvalue="JUnit.AccountServiceApplicationTests" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
       <item itemvalue="Spring Boot.AccountServiceApplication" />
       <item itemvalue="Spring Boot.CardServiceApplication" />
@@ -178,6 +218,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.default: Compose Deployment" />
+        <item itemvalue="Docker.default/Dockerfile" />
+        <item itemvalue="JUnit.AccountServiceApplicationTests" />
         <item itemvalue="Docker.account-service/Dockerfile" />
       </list>
     </recent_temporary>
@@ -219,7 +262,12 @@
       <workItem from="1737213355006" duration="4587000" />
       <workItem from="1737367463777" duration="5049000" />
       <workItem from="1737460955946" duration="5994000" />
-      <workItem from="1737639610045" duration="5562000" />
+      <workItem from="1737639610045" duration="6893000" />
+      <workItem from="1737732498395" duration="8137000" />
+      <workItem from="1737810739324" duration="401000" />
+      <workItem from="1737811150826" duration="6959000" />
+      <workItem from="1737913748965" duration="4874000" />
+      <workItem from="1737985622990" duration="6355000" />
     </task>
     <servers />
   </component>
