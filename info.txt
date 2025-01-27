@@ -90,6 +90,20 @@ Running a Spring Boot app as a container using BuildPacks
 the need of Dockerfile.
 3) Execute the docker command "docker run -p 8090:8090 tutkuince/loans-service:current_version"
 
+Running a Spring Boot app as a container using GoogleJib
+- Cloud Native GoogleJib offer an alternative approach to Dockerfiles, prioritizing consistency, security, performance and governance.
+<plugin>
+    <groupId>com.google.cloud.tools</groupId>
+    <artifactId>jib-maven-plugin</artifactId>
+    <version>3.4.4</version>
+    <configuration>
+        <to>
+            <image>tutkuince/${project.name}:${project.version}</image>
+        </to>
+    </configuration>
+</plugin>
+2) Run the maven command "mvn compile jib:dockerBuild" from the location where pom.xml is present to generate the docker image without
+
 15 Factor Methodologies
 - One codebase, one application
     + Each application has a dedicated codebase. Shared code is managed separately as a library, allowing it to be utilized as a dependency
