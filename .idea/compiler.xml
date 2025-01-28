@@ -11,6 +11,7 @@
         <module name="loans-service" />
         <module name="card-service" />
         <module name="account-service" />
+        <module name="eureka-server" />
       </profile>
     </annotationProcessing>
   </component>
@@ -19,6 +20,7 @@
       <module name="account-service" options="-parameters" />
       <module name="card-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
       <module name="loans-service" options="-parameters" />
     </option>
   </component>
