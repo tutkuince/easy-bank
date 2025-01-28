@@ -34,9 +34,6 @@ services:
     container_name: config-server
     ports:
       - "8071:8071"
-    depends_on:
-      rabbit:
-        condition: service_healthy
     healthcheck:
       test: "curl --fail --silent localhost:8071/actuator/health/readiness | grep UP || exit 1"
       interval: 10s
@@ -76,7 +73,7 @@ services:
         condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "card-service"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://cardsDB:3307/cardsDB"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://cardsDB:3306/cardsDB"
     extends:
       file: common-config.yml
       service: microservice-configserver-config
@@ -93,7 +90,7 @@ services:
         condition: service_healthy
     environment:
       SPRING_APPLICATION_NAME: "loan-service"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://loansDB:3308/loansDB"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://loansDB:3306/loansDB"
     extends:
       file: common-config.yml
       service: microservice-configserver-config
