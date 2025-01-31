@@ -53,7 +53,7 @@ public class CardController {
             )
     })
     @PostMapping("/create")
-    public ResponseEntity<ResponseDto> createLoan(
+    public ResponseEntity<ResponseDto> createCard(
             @RequestParam @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits") String mobileNumber) {
 
         cardService.createLoan(mobileNumber);
