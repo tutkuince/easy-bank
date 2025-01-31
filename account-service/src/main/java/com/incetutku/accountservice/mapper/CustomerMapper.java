@@ -1,9 +1,17 @@
 package com.incetutku.accountservice.mapper;
 
+import com.incetutku.accountservice.dto.CustomerDetailsDto;
 import com.incetutku.accountservice.dto.CustomerDto;
 import com.incetutku.accountservice.entity.Customer;
 
 public class CustomerMapper {
+
+    public static CustomerDetailsDto mapToCustomerDetailsDto(Customer customer, CustomerDetailsDto customerDetailsDto) {
+        customerDetailsDto.setName(customer.getName());
+        customerDetailsDto.setEmail(customer.getEmail());
+        customerDetailsDto.setMobileNumber(customer.getMobileNumber());
+        return customerDetailsDto;
+    }
 
     public static CustomerDto mapToCustomerDto(Customer customer, CustomerDto customerDto) {
         customerDto.setName(customer.getName());
