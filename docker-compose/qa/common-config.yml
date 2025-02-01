@@ -27,12 +27,14 @@ services:
   microservice-configserver-config:
     extends:
       service: microservice-base-config
-    depends_on:
-      eureka-server:
-        condition: service_healthy
     environment:
       SPRING_PROFILES_ACTIVE: qa
       SPRING_CONFIG_IMPORT: "configserver:http://config-server:8071/"
+
+  microservice-eureka-config:
+    extends:
+      service: microservice-configserver-config
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8070/eureka/
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8070/eureka/

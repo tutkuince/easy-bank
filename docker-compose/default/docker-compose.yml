@@ -57,7 +57,7 @@ services:
       start_period: 10s
     extends:
       file: common-config.yml
-      service: microservice-base-config
+      service: microservice-configserver-config
     depends_on:
       config-server:
         condition: service_healthy
@@ -79,7 +79,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://accountsDB:3306/accountsDB"
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: microservice-eureka-config
 
   card-service:
     image: tutkuince/card-service:0.0.3-SNAPSHOT
@@ -96,11 +96,11 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://cardsDB:3306/cardsDB"
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: microservice-eureka-config
 
-  loan-service:
+  loans-service:
     image: tutkuince/loans-service:0.0.3-SNAPSHOT
-    container_name: loan-service
+    container_name: loans-service
     ports:
       - "8090:8090"
     depends_on:
@@ -109,11 +109,11 @@ services:
       loansDB:
         condition: service_healthy
     environment:
-      SPRING_APPLICATION_NAME: "loan-service"
+      SPRING_APPLICATION_NAME: "loans-service"
       SPRING_DATASOURCE_URL: "jdbc:mysql://loansDB:3306/loansDB"
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: microservice-eureka-config
 
 networks:
   easybank:
