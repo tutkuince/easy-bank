@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="loans-service" />
+        <module name="gateway-server" />
         <module name="card-service" />
         <module name="account-service" />
         <module name="eureka-server" />
@@ -21,6 +22,7 @@
       <module name="card-service" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
       <module name="loans-service" options="-parameters" />
     </option>
   </component>
