@@ -10,7 +10,7 @@ spring:
       discovery:
         locator:
           enabled: true
-          lowerCaseServiceId: true
+          lower-case-service-id: true
 
 management:
   endpoints:
@@ -19,7 +19,7 @@ management:
         include: "*"
   endpoint:
     gateway:
-      access: unrestricted
+      enabled: true
   info:
     env:
       enabled: true
