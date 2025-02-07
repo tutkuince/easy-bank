@@ -1,4 +1,4 @@
-package com.incetutku.accountservice.service.client;
+package com.incetutku.accountservice.service;
 
 import com.incetutku.accountservice.dto.CustomerDetailsDto;
 

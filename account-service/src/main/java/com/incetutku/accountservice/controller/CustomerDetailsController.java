@@ -2,7 +2,7 @@ package com.incetutku.accountservice.controller;
 
 import com.incetutku.accountservice.dto.CustomerDetailsDto;
 import com.incetutku.accountservice.dto.ErrorResponseDto;
-import com.incetutku.accountservice.service.client.ICustomerService;
+import com.incetutku.accountservice.service.ICustomerService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

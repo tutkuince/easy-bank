@@ -12,11 +12,13 @@ import com.incetutku.accountservice.mapper.CustomerMapper;
 import com.incetutku.accountservice.repository.AccountRepository;
 import com.incetutku.accountservice.repository.CustomerRepository;
 import com.incetutku.accountservice.service.client.CardFeignClient;
-import com.incetutku.accountservice.service.client.ICustomerService;
+import com.incetutku.accountservice.service.ICustomerService;
 import com.incetutku.accountservice.service.client.LoanFeignClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -39,10 +41,16 @@ public class CustomerServiceImpl implements ICustomerService {
         customerDetailsDto.setAccountDto(AccountMapper.mapToAccountDto(account, new AccountDto()));
 
         ResponseEntity<CardDto> cardDtoResponseEntity = cardFeignClient.fetchCardDetailsByMobileNumber(correlationId, mobileNumber);
-        customerDetailsDto.setCardDto(cardDtoResponseEntity.getBody());
+        if (!Objects.isNull(cardDtoResponseEntity)) {
+            customerDetailsDto.setCardDto(cardDtoResponseEntity.getBody());
+        }
+
 
         ResponseEntity<LoanDto> loanDtoResponseEntity = loanFeignClient.fetchLoanDetailsByMobileNumber(correlationId, mobileNumber);
-        customerDetailsDto.setLoanDto(loanDtoResponseEntity.getBody());
+        if (!Objects.isNull(loanDtoResponseEntity)) {
+            customerDetailsDto.setLoanDto(loanDtoResponseEntity.getBody());
+        }
+
 
         return customerDetailsDto;
     }
