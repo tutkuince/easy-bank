@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.incetutku</groupId>
     <artifactId>loans-service</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
     <name>loans-service</name>
     <description>loans-service</description>
     <url/>
