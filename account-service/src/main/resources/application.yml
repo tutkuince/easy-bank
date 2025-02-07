@@ -55,3 +55,9 @@ info:
     name: "account-service"
     description: "Easy Bank Account Service"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      incetutku:
+        accountservice: DEBUG
