@@ -14,6 +14,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -31,6 +33,8 @@ public class CardController {
     private final ICardService cardService;
     private final Environment environment;
     private final CardContactInfoDto cardContactInfoDto;
+
+    private static final Logger logger = LoggerFactory.getLogger(CardController.class);
 
     @Value("${build.version:0}")
     private String buildVersion;
@@ -80,7 +84,9 @@ public class CardController {
     })
     @GetMapping
     public ResponseEntity<CardDto> fetchCardDetailsByMobileNumber(
+            @RequestHeader("easybank-correlation-id") String correlationId,
             @RequestParam @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits") String mobileNumber) {
+        logger.debug("easybank-correlation-id found:{}", correlationId);
         return ResponseEntity.status(HttpStatus.OK).body(cardService.fetchLoanByMobileNumber(mobileNumber));
     }
 

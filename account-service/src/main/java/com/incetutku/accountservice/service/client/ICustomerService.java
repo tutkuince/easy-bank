@@ -4,5 +4,5 @@ import com.incetutku.accountservice.dto.CustomerDetailsDto;
 
 public interface ICustomerService {
 
-    CustomerDetailsDto getCustomerDetailsByMobileNumber(String mobileNumber);
+    CustomerDetailsDto getCustomerDetailsByMobileNumber(String mobileNumber, String correlationId);
 }
