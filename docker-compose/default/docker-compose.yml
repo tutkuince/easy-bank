@@ -30,7 +30,7 @@ services:
       service: microservice-db-config
 
   config-server:
-    image: tutkuince/config-server:0.0.3-SNAPSHOT
+    image: tutkuince/config-server:0.0.4-SNAPSHOT
     container_name: config-server
     ports:
       - "8071:8071"
@@ -45,7 +45,7 @@ services:
       service: microservice-base-config
 
   eureka-server:
-    image: tutkuince/eureka-server:0.0.1-SNAPSHOT
+    image: tutkuince/eureka-server:0.0.2-SNAPSHOT
     container_name: eureka-server
     ports:
       - "8070:8070"
@@ -65,10 +65,16 @@ services:
       SPRING_APPLICATION_NAME: "eureka-server"
 
   account-service:
-    image: tutkuince/account-service:0.0.3-SNAPSHOT
+    image: tutkuince/account-service:0.0.4-SNAPSHOT
     container_name: account-service
     ports:
       - "8080:8080"
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     depends_on:
       config-server:
         condition: service_healthy
@@ -82,10 +88,16 @@ services:
       service: microservice-eureka-config
 
   card-service:
-    image: tutkuince/card-service:0.0.3-SNAPSHOT
+    image: tutkuince/card-service:0.0.4-SNAPSHOT
     container_name: card-service
     ports:
       - "9000:9000"
+    healthcheck:
+      test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     depends_on:
       config-server:
         condition: service_healthy
@@ -99,10 +111,16 @@ services:
       service: microservice-eureka-config
 
   loans-service:
-    image: tutkuince/loans-service:0.0.3-SNAPSHOT
+    image: tutkuince/loans-service:0.0.4-SNAPSHOT
     container_name: loans-service
     ports:
       - "8090:8090"
+    healthcheck:
+      test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     depends_on:
       config-server:
         condition: service_healthy
@@ -111,6 +129,24 @@ services:
     environment:
       SPRING_APPLICATION_NAME: "loans-service"
       SPRING_DATASOURCE_URL: "jdbc:mysql://loansDB:3306/loansDB"
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
+  gateway-server:
+    image: tutkuince/gateway-server:0.0.1-SNAPSHOT
+    container_name: gateway-server
+    ports:
+      - "8072:8072"
+    depends_on:
+      account-service:
+        condition: service_healthy
+      card-service:
+        condition: service_healthy
+      loans-service:
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: "gateway-server"
     extends:
       file: common-config.yml
       service: microservice-eureka-config
