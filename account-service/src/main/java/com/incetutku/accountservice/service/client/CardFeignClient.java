@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient("card-service")
+@FeignClient(name = "card-service", fallback = CardFallback.class)
 public interface CardFeignClient {
 
     @GetMapping(value = "/api/v1/cards", consumes = "application/json")
