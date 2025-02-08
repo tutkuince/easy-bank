@@ -6,6 +6,7 @@ import com.incetutku.accountservice.dto.CustomerDto;
 import com.incetutku.accountservice.dto.ErrorResponseDto;
 import com.incetutku.accountservice.dto.ResponseDto;
 import com.incetutku.accountservice.service.IAccountService;
+import io.github.resilience4j.retry.annotation.Retry;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -15,6 +16,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -36,6 +39,8 @@ public class AccountController {
     private final IAccountService accountService;
     private final Environment environment;
     private final AccountContactInfoDto accountContactInfoDto;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AccountController.class);
 
     @Value("${build.version:0}")
     private String buildVersion;
@@ -179,9 +184,16 @@ public class AccountController {
                     )
             )
     })
+    @Retry(name = "getBuildInfo", fallbackMethod = "getBuildInfoFallback")
     @GetMapping("/java-version")
     public ResponseEntity<String> getBuildInfo() {
+        LOGGER.debug("getBuildInfo() method Invoked");
         return ResponseEntity.status(HttpStatus.OK).body(environment.getProperty("JAVA_HOME"));
+    }
+
+    public ResponseEntity<String> getBuildInfoFallback(Throwable throwable) {
+        LOGGER.debug("getBuildInfoFallback() method Invoked");
+        return ResponseEntity.status(HttpStatus.OK).body("0.9");
     }
 
     @Operation(
