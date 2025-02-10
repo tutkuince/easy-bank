@@ -6,6 +6,7 @@ import com.incetutku.accountservice.dto.CustomerDto;
 import com.incetutku.accountservice.dto.ErrorResponseDto;
 import com.incetutku.accountservice.dto.ResponseDto;
 import com.incetutku.accountservice.service.IAccountService;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -25,6 +26,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Tag(
         name = "CRUD REST APIs for Account in EasyBank",
@@ -213,8 +216,13 @@ public class AccountController {
                     )
             )
     })
+    @RateLimiter(name = "getContactInfo", fallbackMethod = "getContactInfoFallback")
     @GetMapping("/contact-info")
     public ResponseEntity<AccountContactInfoDto> getContactInfo() {
         return ResponseEntity.status(HttpStatus.OK).body(accountContactInfoDto);
+    }
+
+    public ResponseEntity<AccountContactInfoDto> getContactInfoFallback(Throwable throwable) {
+        return ResponseEntity.status(HttpStatus.OK).body(new AccountContactInfoDto("RateLimiter 'getContactInfo' does not permit further calls", null, List.of("Admin")));
     }
 }
